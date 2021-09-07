@@ -1,0 +1,10 @@
+@import 'settings/colors';
+
+.data-form {
+  &__error {
+    color: #EE4E6F;
+    font-weight: 700;
+    display: block;
+    margin: 40px 0 10px;
+  }
+}

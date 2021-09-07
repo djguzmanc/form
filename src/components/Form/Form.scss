@@ -1,0 +1,61 @@
+@import 'settings/dimens';
+
+.Form {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 20px;
+  max-width: 1110px;
+  &__title {
+    margin: 0 0 20px;
+  }
+  .data-form {
+    &__fieldset {
+      display: flex;
+      flex-wrap: wrap;
+      border: 0;
+      padding: 0;
+      @media (max-width: $mobile-breakpoint) {
+        flex-direction: column;
+      }
+    }
+
+    &__field {
+      flex-grow: 1;
+      margin-bottom: 25px;
+      min-width: 50%;
+      &:nth-child(even) {
+        padding-left: 10px;
+      }
+      &:nth-child(odd) {
+        padding-right: 10px;
+      }
+      .field-label {
+        display: block;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+
+      @media (max-width: $mobile-breakpoint) {
+        &:nth-child(even),
+        &:nth-child(odd) {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.push-sibling {
+  margin-right: 20px;
+}
+
+.btn-form {
+  @media (max-width: $mobile-breakpoint) {
+    display: block;
+    margin: 0 auto 15px;
+    width: 100%;
+    padding: 15px;
+  }
+}

@@ -1,0 +1,114 @@
+@import 'settings/colors';
+
+input[type="text"], input[type="email"] {
+  outline: 0;
+  border: solid 3px $secondary-light;
+  box-shadow: 1px 1px 6px -2px black;
+  padding: 5px 7px;
+  width: 100%;
+  font-size: 24px;
+  &:active, &:focus {
+    border-color: $secondary;
+  }
+}
+
+input.with-error {
+  background-color: $warn-light;
+  border-color: $warn;
+}
+
+.checkbox-custom-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-top: 3px;
+  padding-left: 38px;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.checkbox-custom-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+}
+
+$checkmark-size: 30px;
+.checkbox-custom-container input ~ .ibk-custom-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border: solid 3px $secondary-light;
+  border-radius: 4px;
+  width: $checkmark-size;
+  height: $checkmark-size;
+  transition: 0.1s;
+}
+
+.checkbox-custom-container input:checked ~ .ibk-custom-mark {
+  background-color: $primary;
+}
+
+.ibk-custom-mark:after {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  content: "";
+  transition: 0.1s;
+}
+
+.checkbox-custom-container input:checked ~ .ibk-custom-mark:after {
+  opacity: 1;
+}
+
+.checkbox-custom-container .ibk-custom-mark:after {
+  top: 3px;
+  left: 8px;
+  transform: rotate(45deg);
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  width: 6px;
+  height: 12px;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.checkbox-custom-container input:disabled ~ .ibk-custom-mark {
+  background-color: #eee;
+  border: solid 2px grey;
+}
+
+.checkbox-custom-container input:disabled:checked ~ .ibk-custom-mark {
+  border: solid 1px #eee;
+  box-shadow: 0 0 0 1px #eee;
+}
+
+.checkbox-custom-container input[type="checkbox"]:disabled ~ .ibk-custom-mark:after {
+  transform: rotate(45deg);
+  border: solid grey;
+  border-width: 0 2px 2px 0;
+  width: 4px;
+  height: 10px;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.checkbox-custom-container input:focus ~ .ibk-custom-mark {
+  border: solid 1px $secondary !important;
+  box-shadow: 0 0 0 1px $secondary inset !important;
+}
+
+.checkbox-custom-container input:focus ~ .ibk-custom-mark:after {
+  top: 5px;
+  left: 10px;
+}
+
+.checkbox-custom-container input.with-error ~ .ibk-custom-mark {
+  background-color: $warn-light;
+  border-color: $warn;
+}
